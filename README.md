@@ -1,5 +1,5 @@
 # DrawCircleProgressByCanvas
 
 - Calculator percentage circle progress (canvas)
-- Learing inverse second
+- Learning inverse second
 - Using canvas draw circle progress 
