@@ -7,7 +7,6 @@ import android.os.CountDownTimer
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
@@ -22,9 +21,9 @@ import net.dirox.coreproject.common.activity.BaseActivity
 import net.dirox.coreproject.common.di.scoped.ActivityScoped
 import net.dirox.coreproject.common.viewmodel.ViewModelFactory
 import net.dirox.coreproject.databinding.ActivityMainBinding
+import net.dirox.coreproject.extendsion.replace
 import java.util.*
 import javax.inject.Inject
-import kotlin.math.round
 
 @ActivityScoped
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, MainActivityContract.Navigator {
@@ -34,7 +33,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     lateinit var viewModel: MainActivityViewModel
     lateinit var binding: ActivityMainBinding
 
-    private var percent: Float = 0f
+   // private var percent: Float = 0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,13 +56,15 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         )
 
 
-
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        seekBar.max = 90
+
+        replace(TimelineFragment.newInstance(), R.id.container_id)
+
+      /*  seekBar.max = 90
 
         val endAngle = 172f
 
@@ -85,16 +86,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             override fun onStopTrackingTouch(p0: SeekBar?) {
 
             }
-        })
+        })*/
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        onStartTimeline()
-    }
 
-    private fun onStartTimeline() {
+/*    private fun onStartTimeline() {
 
         val seconds = 30
 
@@ -133,7 +130,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
         }
         cdTimer.start()
-    }
+    }*/
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {

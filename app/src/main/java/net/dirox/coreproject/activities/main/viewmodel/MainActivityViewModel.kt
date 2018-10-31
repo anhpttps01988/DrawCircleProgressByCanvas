@@ -5,18 +5,12 @@ import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.functions.Consumer
 import net.dirox.coreproject.common.viewmodel.BaseViewModel
 import net.dirox.coreproject.data.source.DataRepository
 import net.dirox.coreproject.data.source.response.CountryResponse
 import retrofit2.Response
-import java.lang.Exception
-import javax.inject.Inject
-import javax.xml.datatype.DatatypeConstants.SECONDS
-import android.arch.lifecycle.Transformations.switchMap
 import java.util.concurrent.TimeUnit
-import android.arch.lifecycle.Transformations.switchMap
-import io.reactivex.Flowable
+import javax.inject.Inject
 
 
 class MainActivityViewModel @Inject constructor(var dataRepository: DataRepository) : BaseViewModel(),

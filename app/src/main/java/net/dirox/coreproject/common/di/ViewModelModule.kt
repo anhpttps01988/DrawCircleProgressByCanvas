@@ -6,6 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import net.dirox.coreproject.activities.main.viewmodel.MainActivityViewModel
+import net.dirox.coreproject.activities.main.viewmodel.TimelineViewModel
 import net.dirox.coreproject.common.di.scoped.ViewModelKey
 import net.dirox.coreproject.common.viewmodel.ViewModelFactory
 
@@ -16,10 +17,15 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(MainActivityViewModel::class)
-    abstract fun mainActivityViewModel(viewModel: MainActivityViewModel) : ViewModel
+    abstract fun mainActivityViewModel(viewModel: MainActivityViewModel): ViewModel
 
     @Binds
-    abstract fun viewModelFactory(viewModelFactory: ViewModelFactory) : ViewModelProvider.Factory
+    @IntoMap
+    @ViewModelKey(TimelineViewModel::class)
+    abstract fun timeLineFragmentViewModel(viewModel: TimelineViewModel): ViewModel
+
+    @Binds
+    abstract fun viewModelFactory(viewModelFactory: ViewModelFactory): ViewModelProvider.Factory
 
 
 }

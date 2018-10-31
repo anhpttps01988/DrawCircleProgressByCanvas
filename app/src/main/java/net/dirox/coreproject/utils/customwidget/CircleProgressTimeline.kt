@@ -77,9 +77,7 @@ class CircleProgressTimeline : View {
 
     fun increaseEndAngle(total: Float) {
 
-
-
-        this.endAngle = total.roundToInt().toFloat()
+        this.endAngle = total
 
         invalidate()
     }

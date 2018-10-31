@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+        <net.dirox.coreproject.utils.customwidget.CircleProgressTimeline
+                android:id="@+id/progress_circular"
+                android:padding="22dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+        <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/progress_circular"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"
+                android:textSize="30dp"
+                android:textColor="#000"/>
+
+        <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/tvTime"
+                android:progressDrawable="@drawable/progress_drawable"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</layout>

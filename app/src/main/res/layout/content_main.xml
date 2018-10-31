@@ -17,37 +17,10 @@
             tools:context=".activities.main.view.MainActivity">
 
 
-        <net.dirox.coreproject.utils.customwidget.CircleProgressTimeline
-                android:id="@+id/progress_circular"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+        <FrameLayout
+                android:id="@+id/container_id"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-
-
-        <TextView
-                android:id="@+id/tvTime"
-                android:layout_below="@+id/progress_circular"
-                android:layout_width="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textSize="30dp"
-                android:text="00:00"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:layout_height="wrap_content"/>
-
-        <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_marginBottom="60dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_alignParentBottom="true"
-                android:progressDrawable="@drawable/progress_drawable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
+                android:layout_height="match_parent"/>
 
     </RelativeLayout>
 </layout>
